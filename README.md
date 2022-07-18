@@ -30,7 +30,11 @@ Take a look at the __migrations__ directory. There are currently five migration
 files.
 
 In the terminal, use `sequelize-cli` to migrate the tables defined for you in 
-the migration files.
+the migration files using the following command:
+
+```powershell
+npx dotenv sequelize db:migrate
+```
 
 When this step is completed you have a database file created. Verify that the 
 tables specified in these files have been created using `sqlite3` in the 
@@ -39,7 +43,11 @@ terminal.
 
 ## Step 2: Undo a single migration
 
-Use `sequelize-cli` to undo the most recent migration.
+Use `sequelize-cli` to undo the most recent migration using the command:
+
+```powershell
+npx dotenv sequelize db:migrate:undo
+```
 
 Verify that the `down` function specified in the last migration file has been 
 executed by making sure that the table no longer exists in your database.
@@ -62,7 +70,11 @@ making sure that each of the tables now exist again within your database.
 
 ## Step 4: Undo all migrations
 
-Use `sequelize-cli` to undo all migrations.
+Use `sequelize-cli` to undo all migrations using the command:
+
+```powershell
+npx dotenv sequelize db:migrate:undo:all
+```
 
 Verify that the `down` functions in each of the undone migrations have been 
 executed by making sure that each of these tables no longer exists in your 
